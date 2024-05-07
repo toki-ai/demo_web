@@ -1,4 +1,3 @@
 .env 
-/node modules
-/. idea
-. idea/
+node_modules/
+. idea
