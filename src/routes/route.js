@@ -1,11 +1,11 @@
 import express from "express";
 import webController from "../controller/webController.js";
 
-let Route = express.Router();
+let route = express.Router();
 
-let wedRoute = (app) => { 
-    Route. get( '/' , webController.homeControl);
-    app.use("/", Route) ;
+let initWebRoute = (app) => { 
+    route. get( '/' , webController.homeControl);
+    app.use("/", route) ;
 }
 
-export default wedRoute;
+export default initWebRoute;

@@ -1,5 +1,5 @@
 import express from 'express'; 
-import client from '../config/database.config.js';
+// import client from '../config/database.config.js';
 
 let homeControl = async(req, res) => {
     // await client.connect();

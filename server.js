@@ -1,15 +1,15 @@
 import express from 'express';
-import wedRoute from './src/routes/route.js';
+import initWebRoute from './src/routes/route.js';
 import viewEngine from './src/config/viewEngine.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express(); 
-const port = process.env.PORT; 
+const port = process.env.PORT || 9999; 
 
-wedRoute(app);
+initWebRoute(app);
 viewEngine(app);
 
 app.listen(port, () => {
-    console.log(`your server in ${port}`); 
+    console.log(`Your server is running.`); 
 })
