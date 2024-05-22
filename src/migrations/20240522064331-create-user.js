@@ -1,4 +1,8 @@
 'use strict';
+const path = require('path'); // Import the path module
+import { join } from 'path';
+const { sequelize } = require('../models/user');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -9,19 +13,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING
-      },
-      email: {
+      name: {
         type: Sequelize.STRING
       },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
   },
@@ -29,3 +30,5 @@ module.exports = {
     await queryInterface.dropTable('Users');
   }
 };
+
+
