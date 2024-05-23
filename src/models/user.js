@@ -8,20 +8,22 @@ module.exports = (sequelize) => {
   }
   
   User.init({
-    name: {
+    fullname: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    createdAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
+    email:{
+      type: DataTypes.STRING,
     },
-    updatedAt: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW
-    }
+    address:{
+      type: DataTypes.STRING,
+    },
+    gender: {
+      type: DataTypes.BOOLEAN,
+    },
+    rodeid: {
+      type: DataTypes.STRING,
+    },
   }, {
     sequelize,
     modelName: 'User',

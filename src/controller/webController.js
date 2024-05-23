@@ -2,15 +2,13 @@ import express from 'express';
 import db from "../models/index";
 
 let homeControl = async (req, res) => {
+    let users = null;
     try {
-        const users = await db.User.findAll({
-            attributes: ['id', 'name']
-         });
-        console.log(users);
+        users = await db.User.findAll();
+        return res.render('homePage.ejs', {data : users});
     } catch (e) {
         console.log(e)
     }
-    return res.render('homePage.ejs');
 }
 
 export default {

@@ -1,7 +1,9 @@
 const { Sequelize } = require('sequelize');
 export const sequelize = new Sequelize('health', 'postgres', '123456', {
 host: 'localhost',
-dialect: 'postgres',});
+dialect: 'postgres',
+logging: false,
+});
 
 export const connectDB = () => {
     sequelize.authenticate().then(() => {

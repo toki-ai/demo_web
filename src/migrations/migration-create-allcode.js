@@ -1,19 +1,28 @@
 'use strict';
-const path = require('path'); // Import the path module
-import { join } from 'path';
-const { sequelize } = require('../models/user');
+const path = require('path'); 
+
+const { sequelize } = require('../models/allcode');
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('Allcodes', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      key: {
+        type: Sequelize.STRING
+      },
+      type: {
+        type: Sequelize.STRING
+      }, 
+      valueEn: {
+        type: Sequelize.STRING
+      },
+      valueVi: {
         type: Sequelize.STRING
       },
       createdAt: {
@@ -27,7 +36,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Users');
+    await queryInterface.dropTable('Allcodes');
   }
 };
 

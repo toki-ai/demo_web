@@ -27,15 +27,8 @@ fs
       file.indexOf('.test.js') === -1
     );
   })
-  // .forEach(file => {
-  //   const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
-  //   db[model.name] = model;
-  // });
 .forEach(async (file) => {
   try {
-    // const filePath = new URL(`file://${join(__dirname, file)}`);
-    // const { default: modelInit } = await import(filePath);
-    // const model = modelInit(sequelize, DataTypes);
     const model = require(path.join(__dirname, file))(sequelize, Sequelize.DataTypes);
     db[model.name] = model;
   } catch (error) {
